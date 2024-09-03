@@ -1,0 +1,242 @@
+/* Base styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e5f8f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #faf7ff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    height: 100vh;
+}
+
+.sidebar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00a78e;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 20px 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+.sidebar nav ul li a.active {
+    font-weight: bold;
+    color: #00a78e;
+}
+
+.subscription {
+    background-color: #e5f8f5;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.subscription p {
+    margin: 0 0 10px;
+}
+
+.subscription button {
+    background-color: #00a78e;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+main {
+    flex: 1;
+    padding: auto;
+    margin-left: 270px; /* Adjust for the fixed sidebar */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #00a78e;
+    position: fixed;
+    flex-direction: row;
+    width: -webkit-fill-available;
+}
+
+header input[type="search"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    width: 250px;
+}
+
+header .profile {
+    display: flex;
+    align-items: center;
+}
+
+header .profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+header .profile span {
+    font-weight: bold;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0px;
+    width: 80%; /* Adjust this width as needed */
+    margin: 100px;
+}
+
+.new-courses, .my-courses, .homework-progress {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.new-courses h2, .my-courses h2, .homework-progress h2 {
+    margin-top: 0;
+}
+
+.courses-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.course-card {
+    background-color: #e5f8f5;
+    color: #00a78e;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+}
+
+.my-courses table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.my-courses table th, .my-courses table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.my-courses table th {
+    background-color: #faf7ff;
+    color: #333;
+}
+
+.homework-progress .progress {
+    margin-top: 10px;
+}
+
+.homework-progress .progress-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.homework-progress .progress-item .status {
+    font-weight: bold;
+    color: #00a78e;
+}
+
+.schedule-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.institute {
+    margin-right: auto;
+    margin-bottom: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.institute-name {
+    padding: 15px;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.artha {
+    background-color: #f52d2d;
+}
+
+.saga {
+    background-color: #0059FF; /* Different color for SAGA Institute */
+}
+
+.classes {
+    padding: 15px;
+    background-color: #00a78e6e;
+}
+
+.class {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.class:last-child {
+    border-bottom: none;
+}
+
+.time {
+    font-weight: bold;
+    color: #000000;
+}
+
+.grade {
+    background-color: #ecf0f1;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
