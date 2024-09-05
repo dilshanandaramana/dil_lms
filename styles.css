@@ -149,7 +149,6 @@ header .profile span {
 
 .saga {
     background-color: #0059FF;
-    /* Different color for SAGA Institute */
 }
 
 .classes {
@@ -370,4 +369,89 @@ header .profile span {
     color: white;
     border: none;
     cursor: pointer;
+}
+
+/* ====================================== Mobile Responsive Queries =============================== */
+
+@media screen and (max-width: 1024px) {
+    /* Adjusting sidebar and main content for smaller screens */
+    .sidebar {
+        width: 200px;
+    }
+    
+    main {
+        width: calc(100% - 200px);
+        margin-left: 200px;
+    }
+    
+    /* Adjusting class section width */
+    .schedule-section {
+        width: 100%;
+    }
+    
+    .institute {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    
+    main {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 80px;
+    }
+    
+    header {
+        flex-direction: column;
+    }
+    
+    header input[type="search"] {
+        width: 80%;
+    }
+
+    .schedule-section {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .swiper-container {
+        height: 200px;
+    }
+
+    /* Adjust course card grid for mobile */
+    .course-list {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .swiper-container {
+        height: 160px;
+    }
+
+    .sidebar .logo {
+        font-size: 18px;
+    }
+
+    .schedule-section {
+        padding: 10px;
+    }
+
+    .courseHead input[type="search"] {
+        width: 90%;
+    }
+
+    .course-list {
+        grid-template-columns: 1fr;
+    }
 }
