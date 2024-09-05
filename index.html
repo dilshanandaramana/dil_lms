@@ -4,23 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern LMS Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>LMS Dashboard</title>
+    <link rel="Shortcut Icon" href="logo.ico" type="ico">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 
 <body>
     <div class="container">
         <aside class="sidebar">
             <div class="logo">
-                <h2>DIL LMS</h2>
+                <h2>LMS</h2>
             </div>
             <nav>
                 <ul>
-                    <li><a href="#dashboard" class="active">Dashboard</a></li>
-                    <li><a href="#courses">Courses</a></li>
-                    <li><a href="#grades">Grades</a></li>
-                    <li><a href="#schedule">Schedule</a></li>
-                    <li><a href="#settings">Settings</a></li>
+                    <li><a href="#dashboard" class="tab-link active" data-target="dashboard">Dashboard</a></li>
+                    <li><a href="#courses" class="tab-link" data-target="courses">Courses</a></li>
+                    <li><a href="#grades" class="tab-link" data-target="grades">Grades</a></li>
+                    <li><a href="#onlineict" class="tab-link" data-target="onlineict">Online ICT</a></li>
+                    <li><a href="#registration" class="tab-link" data-target="registration">Registration</a></li>
+                    <li><a href="#masteryForum" class="tab-link" data-target="masteryForum">ICT Mastery Forum</a></li>
                 </ul>
             </nav>
             <div class="subscription">
@@ -31,16 +34,29 @@
 
         <main>
             <header>
-                <input type="search" placeholder="Search">
                 <div class="profile">
-                    <img src="hero.png" alt="Profile Picture">
                     <span>Dilshan Andaramana</span>
                 </div>
             </header>
 
-            <section class="dashboard">
-                <h2 style="text-align: center; padding: 0px;">My Class Schedule</h2>
-            </br>
+
+
+            <section id="dashboard" class="tab-content">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide"><img src="banner1.jpg" alt="Banner 1"></div>
+                        <div class="swiper-slide"><img src="banner2.jpg" alt="Banner 2"></div>
+                        <div class="swiper-slide"><img src="banner3.jpg" alt="Banner 3"></div>
+                        <div class="swiper-slide"><img src="banner4.jpg" alt="Banner 3"></div>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+                <br>
+                <!-- Class Schedule -->
+                <h2 style="text-align: center; padding: 0px;">Class Schedule</h2>
+                </br>
                 <div class="schedule-section">
 
                     <div class="institute">
@@ -103,61 +119,117 @@
                         </div>
                     </div>
                 </div>
-<!--                 
-                <div class="new-courses">
-                    <h2>New Courses</h2>
-                    <div class="courses-grid">
-                        <div class="course-card">Geography</div>
-                        <div class="course-card">JavaScript</div>
-                        <div class="course-card">Photography</div>
+            </section>
+
+            <section id="courses" class="tab-content hidden">
+                <div class="courseBody">
+                    <div class="courseHead">
+                        <h1>Courses</h1>
+                        <!-- <input type="search" placeholder="Search for courses..."> -->
+                    </div>
+
+                    <!-- <div class="courseMain">
+                        <div class="search-filter-container">
+                            
+                            <aside class="filters">
+                                <label>
+                                    Category
+                                    <select>
+                                        <option>All</option>
+                                        <option>School</option>
+                                        <option>Class</option>
+                                        <option>Campus</option>
+                                    </select>
+                                </label>
+                                <label>
+                                    Level
+                                    <select>
+                                        <option>All</option>
+                                        <option>Beginner</option>
+                                        <option>Intermediate</option>
+                                        <option>Advanced</option>
+                                    </select>
+                                </label>
+                                <label>
+                                    Price
+                                    <input type="range" min="0" max="500" step="10">
+                                </label>
+                                <button>Apply Filters</button>
+                            </aside>
+                        </div> -->
+
+                        <!-- Course List Section -->
+                        <section class="course-list">
+                            <div class="course-card" data-category="School" data-level="Beginner" data-price="500">
+                                <img src="course1.jpg" alt="Course 1">
+                                <h3>Course Title 1</h3>
+                                <p>Short description of the course.</p>
+                                <span>Rs 500</span>
+                                <button>Enroll Now</button>
+                            </div>
+                            <div class="course-card" data-category="Class" data-level="Intermediate" data-price="500">
+                                <img src="course2.jpg" alt="Course 2">
+                                <h3>Course Title 2</h3>
+                                <p>Short description of the course.</p>
+                                <span>Rs 500</span>
+                                <button>Enroll Now</button>
+                            </div>
+                            <div class="course-card" data-category="Class" data-level="Intermediate" data-price="500">
+                                <img src="course1.jpg" alt="Course 1">
+                                <h3>Course Title 1</h3>
+                                <p>Short description of the course.</p>
+                                <span>Rs 500</span>
+                                <button>Enroll Now</button>
+                            </div>
+                            <div class="course-card" data-category="School" data-level="Beginner" data-price="500">
+                                <img src="course2.jpg" alt="Course 2">
+                                <h3>Course Title 2</h3>
+                                <p>Short description of the course.</p>
+                                <span>Rs 500</span>
+                                <button>Enroll Now</button>
+                            </div>
+                            <!-- More course cards here -->
+                        </section>
+
+                        <!-- Pagination -->
+                        <div class="pagination">
+                            <button>Previous</button>
+                            <button>Next</button>
+                        </div>
                     </div>
                 </div>
-
-                <div class="my-courses">
-                    <h2>My Courses</h2>
-                    <table>
-                        <tr>
-                            <th>Course</th>
-                            <th>Due Date</th>
-                            <th>Progress</th>
-                            <th>Level</th>
-                        </tr>
-                        <tr>
-                            <td>Design Basics</td>
-                            <td>May 10</td>
-                            <td>80%</td>
-                            <td>Intermediate</td>
-                        </tr>
-                        <tr>
-                            <td>HTML & CSS</td>
-                            <td>May 12</td>
-                            <td>60%</td>
-                            <td>Beginner</td>
-                        </tr>-->
-                        <!-- Add more courses as needed -->
-                    <!-- </table>
-                </div>
-
-                <div class="homework-progress">
-                    <h2>Homework Progress</h2>
-                    <div class="progress">
-                        <div class="progress-item">
-                            <span>Solve the CIS class task</span>
-                            <span class="status">Completed</span>
-                        </div>
-                        <div class="progress-item">
-                            <span>Basics of programming</span>
-                            <span class="status">In Progress</span>
-                        </div> -->
-                        <!-- Add more progress items as needed -->
-                    <!-- </div>
-                </div> -->
-
-
-
-            </section>
-        </main>
     </div>
+    </section>
+
+    <section id="grades" class="tab-content hidden">
+        <h2>Grades Content</h2>
+        <!-- Grades content here -->
+        <p>Premium subscription available</p>
+        <button>More Details</button>
+    </section>
+
+    <section id="onlineict" class="tab-content hidden">
+        <h2>Online ICT Content</h2>
+        <!-- Online ICT content here -->
+        <p>Premium subscription available</p>
+        <button>More Details</button>
+    </section>
+
+    <section id="registration" class="tab-content hidden">
+        <h2>Registration Content</h2>
+        <!-- Registration content here -->
+    </section>
+
+    <section id="masteryForum" class="tab-content hidden">
+        <h2>ICT Mastery Forum Content</h2>
+        <!-- ICT Mastery Forum content here -->
+    </section>
+    </main>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
