@@ -214,6 +214,176 @@
             padding: 5px 10px;
             border-radius: 15px;
         }
+        /* Course */
+        .courses-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .courses-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1f2937;
+        }
+
+        .filter-container {
+            display: flex;
+            gap: 16px;
+        }
+
+        .filter-select {
+            padding: 8px 12px;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .filter-button {
+            padding: 8px 16px;
+            background-color: #00a78e;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .filter-button:hover {
+            background-color: #00a78e;
+        }
+
+        /* Course Grid styles */
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        /* Course Card styles */
+        .course-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .course-card:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .course-content {
+            padding: 16px;
+        }
+
+        .course-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .course-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 4px;
+        }
+
+        .course-grade {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .course-subject {
+            background-color: #dbeafe;
+            color: #00a78e;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .course-description {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .course-stats {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .stat-icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        .course-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .course-price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1f2937;
+        }
+
+        .enroll-button {
+            background-color: #00a78e;
+            color: white;
+            border: none;
+            padding: 8px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .enroll-button:hover {
+            background-color: #00a78e;
+        }
+
+        /* Pagination styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .pagination-button {
+            padding: 8px 16px;
+            border: 1px solid #e5e7eb;
+            background-color: white;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .pagination-button:hover {
+            background-color: #f3f4f6;
+        }
 
         /* Responsive Design */
         @media screen and (max-width: 768px) {
@@ -234,6 +404,24 @@
 
             header input[type="search"] {
                 width: 100%;
+            }
+
+            /* Course */
+            .courses-header {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .filter-container {
+                width: 100%;
+            }
+
+            .filter-select {
+                flex-grow: 1;
+            }
+
+            .course-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -331,38 +519,104 @@
                 </div>
             </div>
             <div id="courses" class="tab-content hidden">
-                <h2>Courses</h2>
-                <div class="search-filter-container">
-                    <div class="filters">
-                        <label for="course-filter">Filter:</label>
-                        <select id="course-filter">
-                            <option value="">All Courses</option>
-                            <option value="math">Math</option>
+                <div class="courses-header">
+                    <h2 class="courses-title">Available Courses</h2>
+                    <div class="filter-container">
+                        <select class="filter-select">
+                            <option value="">All Subjects</option>
+                            <option value="math">Mathematics</option>
                             <option value="science">Science</option>
                         </select>
-                        <button>Apply</button>
+                        <button class="filter-button">Apply Filter</button>
                     </div>
                 </div>
-                <div class="course-list">
+            
+                <div class="course-grid">
+                    <!-- Course Card 1 -->
                     <div class="course-card">
-                        <img src="course1.jpg" alt="Course 1">
-                        <h3>Course Title</h3>
-                        <p>Course description goes here.</p>
-                        <span>$99</span>
-                        <button>Enroll</button>
+                        <img src="./banner1.jpg" alt="Advanced Mathematics" class="course-image">
+                        <div class="course-content">
+                            <div class="course-header">
+                                <div>
+                                    <h3 class="course-title">Advanced Mathematics</h3>
+                                    <p class="course-grade">Grade 10</p>
+                                </div>
+                                <span class="course-subject">Mathematics</span>
+                            </div>
+                            <p class="course-description">Master complex mathematical concepts including algebra, geometry, and trigonometry</p>
+                            <div class="course-stats">
+                                <div class="stat-item">
+                                    <svg class="stat-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    12 weeks
+                                </div>
+                                <div class="stat-item">
+                                    <svg class="stat-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                    </svg>
+                                    234 students
+                                </div>
+                                <div class="stat-item">
+                                    <svg class="stat-icon" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                    </svg>
+                                    4.8
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <span class="course-price">$99</span>
+                                <button class="enroll-button">Enroll Now</button>
+                            </div>
+                        </div>
                     </div>
+            
+                    <!-- Course Card 2 -->
                     <div class="course-card">
-                        <img src="course2.jpg" alt="Course 2">
-                        <h3>Course Title</h3>
-                        <p>Course description goes here.</p>
-                        <span>$149</span>
-                        <button>Enroll</button>
+                        <img src="./banner2.jpg" alt="Physics Fundamentals" class="course-image">
+                        <div class="course-content">
+                            <div class="course-header">
+                                <div>
+                                    <h3 class="course-title">Physics Fundamentals</h3>
+                                    <p class="course-grade">Grade 11</p>
+                                </div>
+                                <span class="course-subject">Science</span>
+                            </div>
+                            <p class="course-description">Comprehensive coverage of mechanics, waves, and thermodynamics</p>
+                            <div class="course-stats">
+                                <div class="stat-item">
+                                    <svg class="stat-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    10 weeks
+                                </div>
+                                <div class="stat-item">
+                                    <svg class="stat-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                    </svg>
+                                    186 students
+                                </div>
+                                <div class="stat-item">
+                                    <svg class="stat-icon" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                    </svg>
+                                    4.7
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <span class="course-price">$149</span>
+                                <button class="enroll-button">Enroll Now</button>
+                            </div>
+                        </div>
                     </div>
-                    <!-- More course cards -->
+            
+                    <!-- Add more course cards here following the same structure -->
+            
                 </div>
+            
                 <div class="pagination">
-                    <button>Previous</button>
-                    <button>Next</button>
+                    <button class="pagination-button">Previous</button>
+                    <button class="pagination-button">Next</button>
                 </div>
             </div>
             <div id="schedule" class="tab-content hidden">
